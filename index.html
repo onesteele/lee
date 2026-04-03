@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Retail Integrity Law | Fraud Defense</title>
+    <!-- 1. TAILWIND CSS (Framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2. FONTS (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 3. GSAP (Animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            slate: '#334155',
+                            light: '#f8fafc',
+                            accent: '#3b82f6', // Professional Blue
+                            gold: '#d4af37',   // Success/Win accent (Darker Gold)
+                            alert: '#ef4444',  // Aggressive Red
+                        }
+                    },
+                    boxShadow: {
+                        'glow-blue': '0 0 20px rgba(59, 130, 246, 0.3)',
+                        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.3)',
+                        'glow-red': '0 0 20px rgba(239, 68, 68, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for Smoothness */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hero Background Pattern */
+        .hero-bg {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+        /* Subtle animated gradient overlay */
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 1) 100%);
+            z-index: 1;
+        }
+        /* Glassmorphism classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        /* Utility to hide element initially for animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        /* Image Hover Glow Effect */
+        .img-glow-container {
+            position: relative;
+            z-index: 1;
+        }
+        .img-glow-container::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            z-index: -1;
+            background: linear-gradient(45deg, #3b82f6, #d4af37, #ef4444);
+            filter: blur(20px);
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+            border-radius: 16px;
+        }
+        .img-glow-container:hover::before {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 overflow-x-hidden">
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full z-50 py-6 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-navy flex items-center gap-2 group">
+                    <div class="w-2 h-2 bg-brand-accent rounded-full group-hover:animate-ping"></div>
+                    VANGUARD
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="index.html" class="hover:text-brand-accent transition-colors">Home</a>
+                    <a href="services.html" class="hover:text-brand-accent transition-colors">Practice Areas</a>
+                    <a href="about.html" class="hover:text-brand-accent transition-colors">About Firm</a>
+                    <a href="#case-study" class="hover:text-brand-accent transition-colors">Case Study</a>
+                    <a href="contact.html" class="text-brand-accent font-bold">Contact</a>
+                </div>
+                <!-- CTA Button -->
+                <a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-brand-navy to-slate-800 text-white text-sm font-medium rounded shadow-lg transform hover:-translate-y-0.5 hover:shadow-xl transition-all">
+                    Consult Legal Counsel
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <header class="hero-bg min-h-screen flex items-center relative pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Left Content -->
+            <div class="hero-text opacity-0 translate-y-10">
+                <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-blue-300 uppercase bg-blue-900/30 rounded-full border border-blue-700/50 backdrop-blur-sm">
+                    Specialized Legal Defense
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
+                    Stop <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-accent">Friendly Fraud.</span><br>
+                    Protect Your Revenue.
+                </h1>
+                <p class="text-slate-300 text-lg md:text-xl mb-8 max-w-lg leading-relaxed text-slate-400">
+                    We represent retailers and merchants against chargeback abuse, contract circumvention, and bilateral agreement violations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="window.location.href='contact.html'" class="px-8 py-4 bg-brand-accent text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-glow-blue">
+                        Start Your Defense
+                    </button>
+                    <button onclick="window.location.href='services.html'" class="px-8 py-4 glass text-white font-semibold rounded-lg hover:bg-white/20 transition-all border border-white/20 hover:border-white/40">
+                        View Our Approach
+                    </button>
+                </div>
+            </div>
+            <!-- Right Visual (Abstract Graphic) -->
+            <div class="hero-visual relative h-96 w-full opacity-0 translate-x-10">
+                <!-- Abstract Cards Representation -->
+                <div class="absolute top-0 right-0 w-64 h-80 bg-gradient-to-br from-blue-500 to-brand-accent rounded-2xl shadow-2xl rotate-3 z-10 transform transition-transform hover:rotate-0"></div>
+                <div class="absolute top-10 right-12 w-64 h-80 bg-white rounded-2xl shadow-2xl -rotate-3 z-20 flex flex-col p-6">
+                    <div class="h-4 w-1/2 bg-slate-200 rounded mb-4"></div>
+                    <div class="h-20 w-full bg-slate-50 rounded border border-slate-100 flex items-center justify-center text-slate-400 text-sm font-mono">
+                        Fraud Detected
+                    </div>
+                    <div class="mt-6 flex gap-2">
+                        <div class="h-2 w-1/3 bg-green-500 rounded-full"></div>
+                        <div class="h-2 w-1/3 bg-slate-200 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- PARTNERS SECTION -->
+    <section id="partners" class="py-20 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8">Strategic Alliance</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 opacity-0 scale-95" id="partners-logos">
+                <!-- ACSI Logo Placeholder -->
+                <div class="h-20 w-80 bg-slate-50 rounded-lg flex items-center justify-center border border-slate-200 shadow-sm px-12 hover:shadow-md transition-all">
+                    <span class="text-slate-400 font-bold text-sm tracking-widest">AMERICAN COLLECTION SYSTEMS INCORPORATED</span>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-slate-300"></div>
+                <!-- Vanguard Logo Placeholder -->
+                <div class="h-20 w-40 bg-brand-navy rounded-lg flex items-center justify-center text-white shadow-sm px-8 hover:bg-slate-800 transition-colors">
+                    <span class="font-bold tracking-widest">VANGUARD</span>
+                </div>
+            </div>
+            <p class="text-slate-600 max-w-2xl mx-auto opacity-0 translate-y-4" id="partners-text">
+                We work seamlessly with <strong>American Collection Systems Incorporated</strong> to provide a full-lifecycle solution: litigation for the dispute, followed by aggressive recovery and collection for the debt.
+            </p>
+        </div>
+    </section>
+    <!-- 1. AGGRESSIVE RED SECTION (The "Hook") -->
+    <section id="aggressive-victory" class="py-24 bg-black relative overflow-hidden border-b border-zinc-800">
+        <!-- Warning Tape Background -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left: Image -->
+            <div class="victory-image relative group opacity-0 translate-x-10">
+                <!-- Image Container -->
+                <div class="relative rounded-xl overflow-hidden shadow-2xl border-2 border-zinc-700 grayscale group-hover:grayscale-0 transition-all duration-700 img-glow-container">
+                    <!-- Darker House Image -->
+                    <img src="./images/faud.png" alt="Repossessed Property" class="w-full h-[550px] object-cover opacity-90">
+                    <!-- Overlay Badge -->
+                    <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded text-xs font-mono text-zinc-400 border border-zinc-600">
+                        CASE ID: #994-AX
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full bg-brand-alert/90 text-white px-6 py-4 text-center font-bold text-sm tracking-widest uppercase shadow-lg">
+                        Case Status: CLOSED - Assets Seized
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Text -->
+            <div class="victory-text opacity-0 translate-y-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="h-px w-12 bg-brand-alert"></div>
+                    <span class="text-red-500 font-bold uppercase tracking-widest text-sm border border-red-900/50 px-2 py-1 rounded bg-red-900/10">Aggressive Litigation</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-2 leading-none tracking-tight">
+                    WE <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">DON'T</span> BACK DOWN.
+                </h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <span class="text-brand-alert">$15,000,000</span> JUDGMENT SECURED
+                </h3>
+                <p class="text-zinc-400 text-lg mb-6 leading-relaxed">
+                    A consumer illegally disputed a program contract, attempting to walk away with millions in services. We didn't just sue. We wiped them out.
+                </p>
+                <div class="bg-zinc-900/50 p-6 rounded-lg border-l-4 border-brand-alert mb-8 backdrop-blur-sm">
+                    <p class="text-white font-medium leading-relaxed">
+                        "We secured a total judgment against the defendant. The court awarded us <span class="text-brand-alert font-bold text-2xl block mt-2">$15,000,000</span> in damages, legal fees, and penalties. We then repossessed their home, vehicles, and liquidated all accounts to recover our fees."
+                    </p>
+                </div>
+                <ul class="space-y-4 text-zinc-300 mb-8 border-t border-zinc-800 pt-6">
+                    <li class="flex items-center group">
+                        <svg class="w-6 h-6 text-red-500 mr-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-xl font-bold">Primary Residence: <span class="text-zinc-500 line-through">Owned</span> to <span class="text-red-500">REPOSSSESSED</span></span>
+                    </li>
+                    <li class="flex items-center group">
+                        <svg class="w-6 h-6 text-red-500 mr-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2m2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-xl font-bold">Personal Vehicles: <span class="text-zinc-500 line-through">Retained</span> to <span class="text-red-500">SEIZED</span></span>
+                    </li>
+                    <li class="flex items-center group">
+                        <svg class="w-6 h-6 text-red-500 mr-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2m2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-xl font-bold">Bank Accounts: <span class="text-zinc-500 line-through">Frozen</span> to <span class="text-red-500">LIQUIDATED</span></span>
+                    </li>
+                </ul>
+                <a href="contact.html" class="inline-block px-10 py-5 bg-brand-alert text-white font-bold text-lg rounded-lg hover:bg-red-600 transition-colors shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:shadow-[0_0_30px_rgba(239,68,68,0.7)] hover:-translate-y-1">
+                    GET AGGRESSIVE LEGAL HELP
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 2. NAVY & GOLD "GREATEST ACCOMPLISHMENT" SECTION -->
+    <section id="case-study" class="py-24 bg-brand-navy relative overflow-hidden">
+        <!-- Decorative Circles -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left: Image -->
+            <div class="blue-section-image opacity-0 translate-x-10">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-gold transform rotate-2 hover:rotate-0 transition-transform duration-500 img-glow-container">
+                    <!-- Bright House Image -->
+                    <img src="./images/victory-house.png" alt="Victory House" class="w-full h-[600px] object-cover">
+                    <!-- Overlay Badge -->
+                    <div class="absolute bottom-4 left-4 bg-brand-gold text-brand-navy px-4 py-2 rounded shadow-lg flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="font-bold text-sm uppercase tracking-widest">Historic Win</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Text -->
+            <div class="blue-section-text opacity-0 translate-y-10">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-brand-navy uppercase bg-brand-gold rounded-full">
+                    Our Greatest Accomplishment
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
+                    The Largest Judgment in Our History.
+                </h2>
+                <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                    We are incredibly proud of this milestone. A consumer illegally breached a vendor contract and attempted to circumvent the agreement's terms entirely. We secured a landmark judgment of <span class="text-brand-gold">$15,000,000</span>.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                        <p class="text-slate-300 text-sm mb-1">Total Judgment</p>
+                        <p class="text-3xl font-bold text-brand-gold">$15,000,000</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                        <p class="text-slate-300 text-sm mb-1">Significance</p>
+                        <p class="text-xl font-bold text-white">Largest Consumer Case</p>
+                    </div>
+                </div>
+                <p class="text-slate-300 mb-6">
+                    This case stands as a testament to our commitment to fighting friendly fraud and enforcing contracts without compromise. It proves that when you take our client's money, you face the full force of our legal team.
+                </p>
+                <a href="services.html" class="inline-block px-8 py-4 bg-brand-gold text-brand-navy font-bold rounded hover:bg-yellow-500 transition-colors shadow-lg hover:shadow-gold-gold hover:-translate-y-1">
+                    VIEW OUR SERVICES
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- SERVICES GRID -->
+    <section id="services" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4 reveal-on-scroll">Practice Areas</h2>
+                <div class="h-1 w-20 bg-brand-accent mb-6 reveal-on-scroll rounded-full"></div>
+                <p class="text-slate-600 text-lg reveal-on-scroll">Comprehensive legal defense for modern retail challenges.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Friendly Fraud Defense</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        We aggressively represent merchants against customers who claim non-delivery or unauthorized transactions despite receiving goods.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Chargeback Management</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Handling disputes through Visa/Mastercard networks, BIN/ACQ level disputes, and representation in arbitration.
+                    </p>
+                </div>
+                <!-- Card 3 (NEW) -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Asset Recovery</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Post-judgment enforcement. We seize and liquidate assets, including real estate and vehicles, to satisfy legal judgments.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Contract Circumvention</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Litigation for consumers who intentionally violate vendor agreements to bypass payment obligations.
+                    </p>
+                </div>
+                <!-- Card 5 (NEW) -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Breach of Contract Suits</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Seeking damages and specific performance when consumers ignore written agreements, terms of service, or purchase orders.
+                    </p>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group opacity-0 translate-y-8 hover:border-blue-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-all group-hover:bg-blue-100"></div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 text-brand-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Debt Collection</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Via our partners at <strong>ACSI</strong>, we recover outstanding balances from fraudulent actors after legal judgment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- DEEP DIVE SECTION -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 relative">
+                <div class="absolute -inset-4 bg-brand-accent/10 rounded-full filter blur-3xl"></div>
+                <!-- Image -->
+                <img src="./images/fraud2.png" alt="Legal Analysis" class="relative rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[400px] img-glow-container">
+            </div>
+            <div class="order-1 lg:order-2">
+                <h2 class="text-3xl font-bold text-brand-navy mb-6 reveal-on-scroll">The Rise of Friendly Fraud</h2>
+                <p class="text-slate-600 mb-6 text-lg reveal-on-scroll">
+                    Friendly fraud occurs when a consumer makes a purchase with the intent to pay, but then falsely claims the transaction was unauthorized or the item was never received.
+                </p>
+                <div class="space-y-4 reveal-on-scroll">
+                    <div class="flex items-start bg-brand-light p-4 rounded-lg border border-slate-100 hover:shadow-md transition-all">
+                        <svg class="w-6 h-6 text-brand-accent mr-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-700 font-medium">Disputes regarding "Item Not Received" claims.</span>
+                    </div>
+                    <div class="flex items-start bg-brand-light p-4 rounded-lg border border-slate-100 hover:shadow-md transition-all">
+                        <svg class="w-6 h-6 text-brand-accent mr-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-700 font-medium">Chargebacks filed after the trial period has ended.</span>
+                    </div>
+                    <div class="flex items-start bg-brand-light p-4 rounded-lg border border-slate-100 hover:shadow-md transition-all">
+                        <svg class="w-6 h-6 text-brand-accent mr-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-slate-700 font-medium">Circumvention of Terms of Service agreements.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TEAM PHOTO SECTION -->
+    <section id="team" class="py-24 bg-brand-navy relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-wider text-brand-navy uppercase bg-brand-gold rounded-full reveal-on-scroll shadow-lg">
+                Meet Our Team
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 reveal-on-scroll tracking-tight">
+                Your Legal Defense Team
+            </h2>
+            <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-12 reveal-on-scroll">
+                Our experienced attorneys and specialists work together to provide comprehensive legal defense for retailers and merchants nationwide.
+            </p>
+            <div class="max-w-4xl mx-auto relative rounded-xl overflow-hidden shadow-2xl border-4 border-brand-gold reveal-on-scroll img-glow-container">
+                <img src="./images/team.png" alt="Vanguard Legal Team" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-brand-navy relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl font-bold text-white mb-6 reveal-on-scroll tracking-tight">Ready to Protect Your Revenue?</h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto reveal-on-scroll">
+                Don't let friendly fraud erode your margins. Partner with Vanguard Retail Integrity Law and American Collection Systems Incorporated for total defense.
+            </p>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm text-left max-w-lg mx-auto shadow-2xl transform reveal-on-scroll hover:bg-white/10 transition-colors hover:border-white/20">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-blue-300 uppercase tracking-wider mb-2">Business Name</label>
+                        <input type="text" class="w-full bg-brand-navy/50 border border-slate-600 rounded p-3 text-white focus:outline-none focus:border-brand-accent transition-colors focus:ring-1 focus:ring-brand-accent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-blue-300 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" class="w-full bg-brand-navy/50 border border-slate-600 rounded p-3 text-white focus:outline-none focus:border-brand-accent transition-colors focus:ring-1 focus:ring-brand-accent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-blue-300 uppercase tracking-wider mb-2">Inquiry Type</label>
+                        <select class="w-full bg-brand-navy/50 border border-slate-600 rounded p-3 text-white focus:outline-none focus:border-brand-accent transition-colors focus:ring-1 focus:ring-brand-accent">
+                            <option>Chargeback Defense</option>
+                            <option>Contract Breach</option>
+                            <option>ACSI Collection Partnership</option>
+                        </select>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-brand-accent to-blue-600 text-white font-bold py-3 rounded hover:from-blue-600 hover:to-brand-accent transition-all shadow-lg shadow-blue-900/50">
+                        Request Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-black text-slate-500 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-white text-lg font-bold mb-4">Vanguard Retail Integrity Law</h3>
+                <p class="max-w-sm">
+                    Specialized legal counsel for the retail industry. We defend against fraud, enforce contracts, and work with ACSI for recovery.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="services.html" class="hover:text-brand-accent transition-colors">Friendly Fraud</a></li>
+                    <li><a href="services.html" class="hover:text-brand-accent transition-colors">Chargebacks</a></li>
+                    <li><a href="services.html" class="hover:text-brand-accent transition-colors">Contract Litigation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <ul class="space-y-2">
+                    <li>Legal Counsel</li>
+                    <li>1-800-VANGUARD</li>
+                    <li>contact@vanguardlaw.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            Attorney Advertising. Prior results do not guarantee a similar outcome.
+        </div>
+    </footer>
+    <!-- ANIMATION SCRIPTS -->
+    <script>
+        // 1. Navbar Shadow Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('py-6');
+                navbar.classList.add('py-4');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-4');
+            }
+        });
+        // 2. GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        // Hero Text Stagger
+        gsap.to('.hero-text', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.2
+        });
+        gsap.to('.hero-visual', {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.4
+        });
+        // Partners Section
+        gsap.to('#partners-logos', {
+            scrollTrigger: { trigger: '#partners', start: 'top 70%' },
+            opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)"
+        });
+        gsap.to('#partners-text', {
+            scrollTrigger: { trigger: '#partners', start: 'top 70%' },
+            opacity: 1, y: 0, duration: 0.8, delay: 0.3
+        });
+        // Aggressive Victory Section (Red)
+        gsap.to('.victory-image', {
+            scrollTrigger: { trigger: '#aggressive-victory', start: 'top 60%' },
+            opacity: 1, x: 0, duration: 1, ease: "power3.out"
+        });
+        gsap.to('.victory-text', {
+            scrollTrigger: { trigger: '#aggressive-victory', start: 'top 60%' },
+            opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2
+        });
+        // Blue & Yellow Case Study Section (Now Navy & Gold)
+        gsap.to('.blue-section-image', {
+            scrollTrigger: { trigger: '#case-study', start: 'top 60%' },
+            opacity: 1, x: 0, duration: 1, ease: "power3.out"
+        });
+        gsap.to('.blue-section-text', {
+            scrollTrigger: { trigger: '#case-study', start: 'top 60%' },
+            opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2
+        });
+        // Services Cards Stagger
+        gsap.to('.service-card', {
+            scrollTrigger: {
+                trigger: '#services',
+                start: 'top 80%',
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
+        // Deep Dive Section
+        gsap.from('#services + section .order-1', {
+            scrollTrigger: { trigger: '#services + section', start: 'top 70%' },
+            x: -50, opacity: 0, duration: 1, ease: 'power2.out'
+        });
+        gsap.from('#services + section .order-2', {
+            scrollTrigger: { trigger: '#services + section', start: 'top 70%' },
+            x: 50, opacity: 0, duration: 1, delay: 0.2, ease: 'power2.out'
+        });
+        // Team Section Animation
+        gsap.to('#team .reveal-on-scroll', {
+            scrollTrigger: { trigger: '#team', start: 'top 70%' },
+            opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power2.out'
+        });
+        // Team Image Animation
+        gsap.to('#team img', {
+            scrollTrigger: { trigger: '#team', start: 'top 60%' },
+            opacity: 1, scale: 1, duration: 1, ease: 'power2.out'
+        });
+        // General Reveal on Scroll
+        const reveals = document.querySelectorAll('.reveal-on-scroll');
+        reveals.forEach(el => {
+            gsap.to(el, {
+                scrollTrigger: { trigger: el, start: 'top 85%' },
+                opacity: 1, y: 0, duration: 0.8, ease: 'power2.out'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: $15M Judgment | Vanguard Retail Integrity Law</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            blue: '#3b82f6',
+                            gold: '#d4af37',
+                            red: '#ef4444',
+                            black: '#0a0a0a',
+                            dark: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+        }
+        .red-gradient {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-navy text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-gold">
+                        Vanguard<span class="text-white">Integrity</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-brand-gold transition">Home</a>
+                    <a href="services.html" class="text-white hover:text-brand-gold transition">Services</a>
+                    <a href="case-study.html" class="text-brand-gold font-semibold">Case Study</a>
+                    <a href="about.html" class="text-white hover:text-brand-gold transition">About</a>
+                    <a href="contact.html" class="bg-brand-red hover:bg-red-600 text-white px-6 py-2 rounded-lg transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Hero -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-black">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-dark to-brand-red/20"></div>
+
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-red rounded-full mix-blend-screen filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-gold rounded-full mix-blend-screen filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block mb-6">
+                <span class="bg-brand-red/20 text-brand-red px-6 py-2 rounded-full text-sm font-semibold border border-brand-red/30">
+                    CASE #994-AX
+                </span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-brand-gold to-white bg-clip-text text-transparent">
+                $15,000,000
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 text-white">
+                JUDGMENT OBTAINED
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                When a consumer illegally disputed their contract, we didn't just fight back—we demolished their case and seized every asset they thought was protected.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-brand-red hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105">
+                    Get Similar Results
+                </a>
+                <a href="services.html" class="glass hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg transition">
+                    Our Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Case Details Section -->
+    <section class="bg-brand-dark py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="case-reveal">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&h=600&fit=crop"
+                         alt="Legal documents"
+                         class="rounded-lg shadow-2xl border-2 border-brand-red/30">
+                </div>
+                <div class="case-reveal">
+                    <div class="inline-block mb-4">
+                        <span class="bg-brand-red/20 text-brand-red px-4 py-1 rounded text-sm font-semibold">Breach of Contract & Fraud</span>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-6">
+                        The Problem: Aggressive Consumer Abuse
+                    </h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        A retail client enrolled a customer in their $75,000 premium program. The consumer signed comprehensive contracts with clear terms of service, payment obligations, and arbitration clauses.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        Instead of honoring their agreement, the consumer:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-red mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-300">Falsely claimed the contract was fraudulent</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-red mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-300">Initiated friendly fraud chargebacks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-red mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-300">Refused all payment obligations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-red mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-300">Threatened to file false complaints with regulators</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Aggressive Response -->
+    <section class="bg-brand-navy py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="bg-brand-gold/20 text-brand-gold px-4 py-1 rounded text-sm font-semibold">Litigation Strategy</span>
+                </div>
+                <h3 class="text-4xl font-bold text-white mb-6">
+                    Our Response: Total Legal Annihilation
+                </h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We didn't just defend—we launched a comprehensive counter-attack across multiple legal fronts.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass p-8 rounded-lg case-reveal">
+                    <div class="w-16 h-16 bg-brand-red/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">File Immediate Lawsuit</h4>
+                    <p class="text-gray-300">
+                        Breach of contract, unjust enrichment, fraud, and tortious interference claims filed in federal court.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-lg case-reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-brand-red/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Evidence Collection</h4>
+                    <p class="text-gray-300">
+                        Discovered signed contracts, recording consent, payment history, and communications proving intentional fraud.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-lg case-reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-brand-red/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Asset Discovery</h4>
+                    <p class="text-gray-300">
+                        Comprehensive investigation revealed hidden assets: primary residence, luxury vehicles, investment accounts.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-lg case-reveal" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 bg-brand-red/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 18v-6a2 2 0 00-2-2h0a2 2 0 00-2 2v6a2 2 0 002 2h0a2 2 0 002-2zm-6-6v-6a2 2 0 00-2-2h0a2 2 0 00-2 2v6a2 2 0 002 2h0a2 2 0 002-2zm-6-6v-6a2 2 0 00-2-2h0a2 2 0 00-2 2v6a2 2 0 002 2h0a2 2 0 002-2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Pre-Judgment Relief</h4>
+                    <p class="text-gray-300">
+                        Secured liens on real property, frozen bank accounts, and seized vehicles pending final judgment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Victory -->
+    <section class="bg-gradient-to-b from-brand-dark to-brand-black py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="gold-gradient text-brand-navy px-6 py-2 rounded-full text-sm font-bold">Case Closed</span>
+                </div>
+                <h3 class="text-4xl font-bold text-white mb-6">
+                    Complete Victory: Assets Seized, Judgment Enforced
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="case-reveal space-y-8">
+                    <div class="glass p-8 rounded-lg border-l-4 border-brand-red">
+                        <div class="flex items-start">
+                            <svg class="w-12 h-12 text-brand-red mr-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white mb-3">Primary Residence Seized</h4>
+                                <p class="text-gray-300 text-lg">
+                                    Federal court granted us a judgment lien on the consumer's primary home in [State]. The property was scheduled for foreclosure auction to satisfy the judgment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass p-8 rounded-lg border-l-4 border-brand-gold">
+                        <div class="flex items-start">
+                            <svg class="w-12 h-12 text-brand-gold mr-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white mb-3">Luxury Vehicles Repossessed</h4>
+                                <p class="text-gray-300 text-lg">
+                                    Two luxury vehicles (BMW X5, Mercedes C-Class) were seized through writ of replevin. Combined value: $180,000.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass p-8 rounded-lg border-l-4 border-brand-blue">
+                        <div class="flex items-start">
+                            <svg class="w-12 h-12 text-brand-blue mr-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white mb-3">Investment Accounts Liquidated</h4>
+                                <p class="text-gray-300 text-lg">
+                                    Brokerage and retirement accounts (except protected portions) were frozen and liquidated. Total recovered: $8,200,000.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-reveal">
+                    <div class="glass p-12 rounded-lg">
+                        <h4 class="text-3xl font-bold text-white mb-8 text-center">
+                            Total Judgment Recovery
+                        </h4>
+
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center p-6 bg-brand-red/10 rounded-lg border border-brand-red/30">
+                                <span class="text-xl text-gray-300">Contract Damages</span>
+                                <span class="text-3xl font-bold text-brand-red">$7,500,000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-6 bg-brand-gold/10 rounded-lg border border-brand-gold/30">
+                                <span class="text-xl text-gray-300">Pre-Judgment Interest</span>
+                                <span class="text-3xl font-bold text-brand-gold">$4,200,000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-6 bg-brand-blue/10 rounded-lg border border-brand-blue/30">
+                                <span class="text-xl text-gray-300">Punitive Damages</span>
+                                <span class="text-3xl font-bold text-brand-blue">$3,300,000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-6 bg-white/10 rounded-lg border border-white/30">
+                                <span class="text-xl text-white font-semibold">Legal Fees & Costs</span>
+                                <span class="text-3xl font-bold text-white">$1,000,000</span>
+                            </div>
+
+                            <div class="mt-8 pt-8 border-t-2 border-brand-red">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-4xl font-bold text-white">TOTAL JUDGMENT</span>
+                                    <span class="text-6xl font-black text-brand-red">$15,000,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 p-6 bg-brand-red/20 rounded-lg border border-brand-red/30">
+                            <p class="text-center text-white text-lg font-semibold">
+                                ✓ All assets successfully seized and liquidated<br>
+                                ✓ Full judgment satisfaction achieved<br>
+                                ✓ Consumer's bankruptcy petition denied
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What This Means for Your Business -->
+    <section class="bg-brand-navy py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-white mb-6">
+                    This Is What We Do
+                </h3>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    When consumers try to steal from you through friendly fraud, we don't negotiate. We destroy their ability to ever harm your business again.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-lg case-reveal text-center">
+                    <div class="w-20 h-20 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">No Settlement Offers</h4>
+                    <p class="text-gray-300">
+                        We don't settle for pennies on the dollar. We go for everything they have.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-lg case-reveal text-center" style="transition-delay: 100ms;">
+                    <div class="w-20 h-20 bg-brand-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Asset Tracing Experts</h4>
+                    <p class="text-gray-300">
+                        We find assets they thought were hidden. Homes, cars, accounts—nothing is safe.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-lg case-reveal text-center" style="transition-delay: 200ms;">
+                    <div class="w-20 h-20 bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Speed to Judgment</h4>
+                    <p class="text-gray-300">
+                        We move fast to freeze assets before they can hide or transfer them.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-24 overflow-hidden bg-brand-black">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-red/20 via-brand-black to-brand-gold/20"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-black text-white mb-6">
+                Ready to Destroy Friendly Fraud?
+            </h2>
+            <p class="text-xl text-gray-300 mb-10">
+                If a consumer is trying to cheat you out of what you're owed, we'll take them apart legally. Just like we did in case #994-AX.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-brand-red hover:bg-red-600 text-white px-10 py-5 rounded-lg font-bold text-xl transition transform hover:scale-105">
+                    Start Your Case Today
+                </a>
+                <a href="services.html" class="glass hover:bg-white/10 text-white px-10 py-5 rounded-lg font-bold text-xl transition">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-bold text-brand-gold">
+                        Vanguard<span class="text-white">Integrity</span>
+                    </a>
+                    <p class="text-gray-400 mt-4 max-w-md">
+                        Aggressive representation for retailers facing friendly fraud, chargeback abuse, and contract breaches.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Practice Areas</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#friendly-fraud" class="text-gray-400 hover:text-brand-gold transition">Friendly Fraud Defense</a></li>
+                        <li><a href="services.html#chargebacks" class="text-gray-400 hover:text-brand-gold transition">Chargeback Management</a></li>
+                        <li><a href="services.html#litigation" class="text-gray-400 hover:text-brand-gold transition">Commercial Litigation</a></li>
+                        <li><a href="services.html#contracts" class="text-gray-400 hover:text-brand-gold transition">Contract Enforcement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-brand-gold transition">About Us</a></li>
+                        <li><a href="case-study.html" class="text-gray-400 hover:text-brand-gold transition">Case Studies</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-400">
+                <p>&copy; 2026 Vanguard Retail Integrity Law. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.case-reveal').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%'
+                },
+                opacity: 0,
+                y: 60,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+    </script>
+</body>
+</html>
